@@ -8,12 +8,12 @@ with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
 VERSION = '0.0.1'
-DESCRIPTION = 'Simulates NCSs'
-LONG_DESCRIPTION = 'Python package for simulation of Networked Control Systems (NCSs)'
+DESCRIPTION = 'To be deleted later'
+LONG_DESCRIPTION = 'Dummy package to test direct publishing from GitHub to PyPi'
 
 # Setting up
 setup(
-    name="ncsim",
+    name="dummypypi2",
     version=VERSION,
     author="Bart Wolleswinkel",
     author_email="b.wolleswinkel@tudelft.nl",
@@ -22,7 +22,7 @@ setup(
     long_description=long_description,
     packages=find_packages(),
     install_requires=['numpy'],
-    keywords=['python', 'simulation', 'control', 'networks'],
+    keywords=['python', 'dummy', 'github'],
     classifiers=[
         "Development Status :: 1 - Planning",
         "Intended Audience :: Developers",

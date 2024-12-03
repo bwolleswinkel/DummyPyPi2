@@ -1,2 +1,2 @@
-# NCSim
-Python package for simulation of Networked Control Systems (NCSs).
+# DummyPyPi2
+Dummy package to test direct publishing from GitHub to PyPi
