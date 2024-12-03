@@ -22,7 +22,7 @@ setup(
     long_description=long_description,
     packages=find_packages(),
     install_requires=['numpy'],
-    keywords=['python', 'dummy', 'github'],
+    keywords=['python', 'dummy', 'github', 'pypi', 'test'],
     classifiers=[
         "Development Status :: 1 - Planning",
         "Intended Audience :: Developers",
