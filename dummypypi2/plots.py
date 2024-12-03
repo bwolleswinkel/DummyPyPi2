@@ -7,9 +7,8 @@ Script which handles all plotting methods.
 
 # Import packages
 import numpy as np
-from setupScript import tableau_color_palette_10 as color_palette
-from functions import utils
-from functions.utils import NPArray
+import utils
+from utils import NPArray
 import matplotlib.pyplot as plt
 from matplotlib import colors as mplcolors
 from matplotlib.figure import Figure
@@ -19,6 +18,19 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection  # For plotting polygons
 from mpl_toolkits.mplot3d import proj3d  # For fancy arrows
 from typing import Literal
 import warnings
+
+# Tableau colors
+# FROM: https://jrnold.github.io/ggthemes/reference/tableau_color_pal.html
+color_palette = ["#4E79A7",  # 0: Blue
+                            "#F28E2B",  # 1: Orange
+                            "#E15759",  # 2: Red
+                            "#76B7B2",  # 3: Teal
+                            "#59A14F",  # 4: Green
+                            "#EDC948",  # 5: Yellow
+                            "#B07AA1",  # 6: Purple
+                            "#FF9DA7",  # 7: Pink
+                            "#9C755F",  # 8: Brown
+                            "#BAB0AC"]  # 9: Gray
 
 
 # ------------ CLASSES ------------
