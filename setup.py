@@ -7,9 +7,9 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '0.1.12'
-DESCRIPTION = 'To be deleted later'
-LONG_DESCRIPTION = 'Dummy package to test direct publishing from GitHub to PyPi'
+VERSION = '0.1.13'
+DESCRIPTION = "To be deleted later"
+LONG_DESCRIPTION = "Dummy package to test direct publishing from GitHub to PyPi"
 
 # Setting up
 setup(
