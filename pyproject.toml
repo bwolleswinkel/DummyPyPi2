@@ -1,0 +1,27 @@
+[build-system]
+requires = ["uv_build >= 0.9.18, <0.10.0"]
+build-backend = "uv_build"
+
+[project]
+name = "geopes"
+version = ["version"]
+dependencies = [
+  "numpy",
+]
+requires-python = ">=3.8"
+authors = [
+  {name = "Bart Wolleswinkel", email = "b.wolleswinkel@tudelft.nl"}
+]
+description = "Dummy package to test direct publishing from GitHub to PyPi"
+readme = "README.md"
+keywords = ['python', 'dummy', 'github', 'pypi', 'test']
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Programming Language :: Python"
+]
+
+[project.optional-dependencies]
+gui = ["PyQt5"]
+
+[project.urls]
+Documentation = "https://geopes.readthedocs.io/en/latest/"
