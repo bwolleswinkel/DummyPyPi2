@@ -27,13 +27,19 @@ def get_signed_angle(v_1: npt.NDArray[np.float64], v_2: npt.NDArray[np.float64],
     #: Compute the unsigned angle
     angle = np.arccos(np.clip(dot_products_normalized, -1.0, 1.0))  # Clipping is needed due to numerical issues
     #: The sign of (A x B) dot look gives the sign of the angle. Here, angle > 0 means clockwise, angle < 0 is counterclockwise.
-    sign = np.array(np.sign(np.cross(v_1, v_2).dot(look)))
+    # For 2D vectors, extend them to 3D for cross product
+    v_1_3d = np.append(v_1, 0) if len(v_1) == 2 else v_1
+    v_2_3d = np.append(v_2, 0) if len(v_2) == 2 else v_2
+    
+    cross_product = np.cross(v_1_3d, v_2_3d)
+    sign = np.sign(np.dot(cross_product, look))
     #: An angle of 0 means collinear: 0 or 180. Let's call that clockwise.
-    sign[sign == 0] = 1
+    if sign == 0:
+        sign = 1
     #: Compute the signed angle
     signed_angle = sign * angle
     #: Return the result
-    return signed_angle
+    return float(signed_angle)
 
 
 def is_prime(n: int) -> bool:
@@ -44,3 +50,10 @@ def is_prime(n: int) -> bool:
         if n % i == 0:
             return False
     return True
+
+
+def divide(a: float, b: float) -> float:
+    """Divide two numbers, returning np.inf if division by zero occurs"""
+    if np.isclose(b, 0.0):
+        raise ValueError("Denominator is too close to zero.")
+    return a / b

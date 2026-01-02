@@ -1,1 +1,1 @@
-from dummypypi2.utils import get_signed_angle, is_prime
+from .utils import *
