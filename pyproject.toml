@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "geopes"
-version = ["version"]
+dynamic = ["version"]
 dependencies = [
   "numpy",
 ]
