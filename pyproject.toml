@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=61.0", "setuptools_scm[toml]>=7.1"]
-build-backend = "setuptools"
+requires = ["uv_build", "uv-dynamic-versioning"]
+build-backend = "uv_build"
 
 [project]
 name = "geopes"
