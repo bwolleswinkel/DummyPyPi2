@@ -547,3 +547,13 @@ def get_quadratic_triggering_matrix(n_x: int, condition: Literal['rel_state_erro
             xi_elems = ('x_s', 'x_i')
     #: Return the results
     return Q, xi_elems
+
+
+def is_prime(n: int) -> bool:
+    """Check if a number is prime"""
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
