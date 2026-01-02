@@ -1,6 +1,6 @@
 [build-system]
-requires = ["hatchling", "hatch-vcs"]
-build-backend = "hatchling.build"
+requires = ["uv_build", "setuptools-scm"]
+build-backend = "uv_build"
 
 [project]
 name = "dummypypi2"
@@ -23,8 +23,5 @@ classifiers = [
 [project.optional-dependencies]
 gui = ["PyQt5"]
 
-[tool.hatch.version]
-source = "vcs"
-
-[tool.hatch.build.hooks.vcs]
-version-file = "src/dummypypi2/_version.py"
+[tool.setuptools-scm]
+write_to = "src/dummypypi2/_version.py"
