@@ -1,6 +1,6 @@
 [build-system]
-requires = ["uv_build", "uv-dynamic-versioning"]
-build-backend = "uv_build"
+requires = ["uv-dynamic-versioning"]
+build-backend = "uv_dynamic_versioning"
 
 [project]
 name = "geopes"
@@ -25,3 +25,9 @@ gui = ["PyQt5"]
 
 [project.urls]
 Documentation = "https://geopes.readthedocs.io/en/latest/"
+
+[tool.uv-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "pep440"
+pattern = "default"
