@@ -2,8 +2,8 @@
 
 # -- Project information
 
-project = 'DummyPyPI'
-copyright = '2026, Bart Wolleswinkel'
+project = 'GeoPES'
+copyright = '2025, Bart Wolleswinkel'
 author = 'Bart Wolleswinkel'
 
 release = '0.1'
