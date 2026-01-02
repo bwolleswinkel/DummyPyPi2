@@ -2,3 +2,4 @@
 scratchpad.py
 *__pycache__*/
 _version.py
+*.tox/
