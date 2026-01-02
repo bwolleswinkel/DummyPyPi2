@@ -6,8 +6,8 @@ project = 'DummyPyPI'
 copyright = '2026, Bart Wolleswinkel'
 author = 'Bart Wolleswinkel'
 
-release = '0.1'
-version = '0.1.2'
+release = '0.1.27'
+version = '0.1.27'
 
 # -- General configuration
 
