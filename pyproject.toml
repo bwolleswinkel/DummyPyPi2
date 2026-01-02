@@ -1,6 +1,6 @@
 [build-system]
-requires = ["uv-dynamic-versioning"]
-build-backend = "uv_dynamic_versioning"
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
 
 [project]
 name = "geopes"
@@ -26,8 +26,8 @@ gui = ["PyQt5"]
 [project.urls]
 Documentation = "https://geopes.readthedocs.io/en/latest/"
 
-[tool.uv-dynamic-versioning]
-enable = true
-vcs = "git"
-style = "pep440"
-pattern = "default"
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/dummypypi2/_version.py"
