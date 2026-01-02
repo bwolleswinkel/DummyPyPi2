@@ -30,12 +30,9 @@ def get_signed_angle(v_1: npt.NDArray[np.float64], v_2: npt.NDArray[np.float64],
     # For 2D vectors, extend them to 3D for cross product
     v_1_3d = np.append(v_1, 0) if len(v_1) == 2 else v_1
     v_2_3d = np.append(v_2, 0) if len(v_2) == 2 else v_2
-    
-    cross_product = np.cross(v_1_3d, v_2_3d)
-    sign = np.sign(np.dot(cross_product, look))
+    sign = np.array(np.sign(np.cross(v_1, v_2).dot(look)))
     #: An angle of 0 means collinear: 0 or 180. Let's call that clockwise.
-    if sign == 0:
-        sign = 1
+    sign[sign == 0] = 1
     #: Compute the signed angle
     signed_angle = sign * angle
     #: Return the result
@@ -57,3 +54,16 @@ def divide(a: float, b: float) -> float:
     if np.isclose(b, 0.0):
         raise ValueError("Denominator is too close to zero.")
     return a / b
+
+
+def main():
+    a = np.array([1, 0])
+    b = np.array([0, 1])
+
+    theta = get_signed_angle(a, b, look=np.cross(a, b))
+
+    print(np.degrees(theta))
+
+
+if __name__ == "__main__":
+    main()
