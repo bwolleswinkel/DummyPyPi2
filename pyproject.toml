@@ -1,6 +1,6 @@
 [build-system]
-requires = ["uv_build", "uv-dynamic-versioning"]
-build-backend = "uv_build"
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
 
 [project]
 name = "dummypypi2"
@@ -23,9 +23,8 @@ classifiers = [
 [project.optional-dependencies]
 gui = ["PyQt5"]
 
-[tool.uv-dynamic-versioning]
-enable = true
-vcs = "git"
-style = "pep440"
-pattern = "default"
-write_to = "src/dummypypi2/_version.py"
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/dummypypi2/_version.py"
