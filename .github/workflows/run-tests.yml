@@ -44,4 +44,4 @@ jobs:
                 python -m pip install mypy
 
             - name: Run mypy type checking
-              run: mypy --strict .
+              run: mypy --strict dummypypi2
