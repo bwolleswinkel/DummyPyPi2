@@ -3,7 +3,7 @@
 from . import algo
 
 # Export variables by reference to maintain global state
-def __getattr__(name):
+def __getattr__(name: str) -> float:
     if name == 'RTOL':
         return algo.RTOL
     elif name == 'ATOL':

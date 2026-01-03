@@ -57,10 +57,10 @@ def divide(a: float, b: float) -> float:
 
 def is_close(a: float, b: float) -> bool:
     """Check if two floating-point numbers are close within global tolerances"""
-    return np.isclose(a, b, rtol=cfg.RTOL, atol=cfg.ATOL)
+    return np.isclose(a, b, rtol=cfg.RTOL, atol=cfg.ATOL).item()
 
 
-def main():
+def main() -> None:
     a = 0.9
     b = 1.0
 

@@ -1,7 +1,8 @@
 from __future__ import annotations
-from typing import Literal
+from typing import Literal, Any
 
-RTOL, ATOL = 1E-5, 1E-8
+RTOL: float = 1E-5
+ATOL: float = 1E-8
 
 class _NumericalToleranceBase:
     """Base class with shared numerical tolerance setting functionality"""
@@ -52,7 +53,7 @@ class NumericalToleranceContextManager(_NumericalToleranceBase):
         self._set_tolerance(rtol=self._rtol, atol=self._atol)
         return self
 
-    def __exit__(self, *_) -> None:
+    def __exit__(self, *_: Any) -> None:
         """Exit context: restore previous numerical tolerance values"""
         global RTOL, ATOL
         RTOL, ATOL = self._prev_rtol, self._prev_atol
@@ -81,7 +82,7 @@ class NumericalToleranceSetter(_NumericalToleranceBase):
     
     """
     
-    def __call__(self, shortcut: Literal['default'] | None = None, *_, rtol: float | None = None, atol: float | None = None) -> None:
+    def __call__(self, shortcut: Literal['default'] | None = None, *_: Any, rtol: float | None = None, atol: float | None = None) -> None:
         """Set global numerical tolerance values permanently"""
         if shortcut is None:
             # Only set custom tolerances

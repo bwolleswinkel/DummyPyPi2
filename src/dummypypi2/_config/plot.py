@@ -108,7 +108,8 @@ class DisplayOptionsSetter:
             }
             try:
                 import matplotlib as mpl
-                mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=color_dict[color_cycle])
+                from cycler import cycler
+                mpl.rcParams['axes.prop_cycle'] = cycler(color=color_dict[color_cycle])
             except ImportError:
                 raise ImportWarning("Package 'matplotlib' is not installed. Please install it to use this color palette.")
             
