@@ -34,10 +34,13 @@ __version__
 
 """
 
+# Import modules
 from .utils import *
 
+# Import sub-packages
 from . import control
 
+# Import functions to make them available at the package level
 from ._config.algo import algo_options, set_algo_options
 from ._config.plot import set_display_options
 
