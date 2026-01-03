@@ -3,6 +3,23 @@ import numpy as np
 
 import dummypypi2 as dp
 
+@pytest.mark.parametrize("number, expected", [
+    (2, True),
+    (3, True),
+    (4, False),
+    (17, True),
+    (18, False),
+    (19, True),
+    (20, False),
+    (1, False),
+    (0, False),
+    (-5, False),
+])
+
+
+def test_is_prime(number, expected):
+    assert dp.is_prime(number) == expected, f"is_prime({number}) should be {expected}"
+
 
 def test_get_signed_angle():
     a, b = np.array([1, 0, 0]), np.array([0, 1, 2])
