@@ -17,7 +17,7 @@ import numpy as np
 import numpy.typing as npt
 
 from . import config as cfg
-from .config import set_tol  # This is such that dp.set_tol can be used externally
+from .config import algo_options, set_algo_options
 
 
 def get_signed_angle(v_1: npt.NDArray[np.float64], v_2: npt.NDArray[np.float64], look: npt.NDArray[np.float64]) -> float:
@@ -30,9 +30,6 @@ def get_signed_angle(v_1: npt.NDArray[np.float64], v_2: npt.NDArray[np.float64],
     #: Compute the unsigned angle
     angle = np.arccos(np.clip(dot_products_normalized, -1.0, 1.0))  # Clipping is needed due to numerical issues
     #: The sign of (A x B) dot look gives the sign of the angle. Here, angle > 0 means clockwise, angle < 0 is counterclockwise.
-    # For 2D vectors, extend them to 3D for cross product
-    v_1_3d = np.append(v_1, 0) if len(v_1) == 2 else v_1
-    v_2_3d = np.append(v_2, 0) if len(v_2) == 2 else v_2
     sign = np.array(np.sign(np.cross(v_1, v_2).dot(look)))
     #: An angle of 0 means collinear: 0 or 180. Let's call that clockwise.
     sign[sign == 0] = 1
