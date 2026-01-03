@@ -17,7 +17,6 @@ import numpy as np
 import numpy.typing as npt
 
 from . import config as cfg
-from .config import algo_options, set_algo_options
 
 
 def get_signed_angle(v_1: npt.NDArray[np.float64], v_2: npt.NDArray[np.float64], look: npt.NDArray[np.float64]) -> float:
