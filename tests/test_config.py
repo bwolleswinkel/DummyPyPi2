@@ -8,7 +8,7 @@ import dummypypi2 as dp
 def test_set_algo_options():
     # Test resetting to default
     dp.set_algo_options('default')
-    assert dp._config._algo.RTOL == 1E-5 and dp._config._algo.ATOL == 1E-8, "RTOL and ATOL should be set to 1E-5 and 1E-8 by default, respectively"
+    assert dp._config.algo.RTOL == 1E-5 and dp._config.algo.ATOL == 1E-8, "RTOL and ATOL should be set to 1E-5 and 1E-8 by default, respectively"
 
     # Test closeness with default tolerances
     a, delta = 0.1, 1E-5; b = a + delta
@@ -16,7 +16,7 @@ def test_set_algo_options():
 
     # Test setting custom tolerances
     dp.set_algo_options(atol=1E-3)
-    assert dp._config._algo.RTOL == 1E-5 and dp._config._algo.ATOL == 1E-3, "RTOL and ATOL should be set by the global setter to 1E-5 and 1E-3, respectively"
+    assert dp._config.algo.RTOL == 1E-5 and dp._config.algo.ATOL == 1E-3, "RTOL and ATOL should be set by the global setter to 1E-5 and 1E-3, respectively"
     
     # Test closeness with updated tolerances
     assert dp.is_close(a, b), "With ATOL=1E-3, a and b should be considered close"
