@@ -26,7 +26,7 @@ def test_algo_options_context_manager():
     # FROM: https://stackoverflow.com/questions/39896716/can-i-perform-multiple-assertions-in-pytest  # nopep8
     errors = []
 
-    import dummypypi2._config._algo as cfg
+    import dummypypi2._config.algo as cfg
     dp.set_algo_options('default')  # FIXME: This does not work, because the previous test modified the global state... so we need to either modify the order, or reset the state here
     if not (cfg.RTOL == 1E-5 and cfg.ATOL == 1E-8):
         errors.append("RTOL and ATOL should be set to 1E-5 and 1E-8 by default, respectively")
