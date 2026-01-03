@@ -38,6 +38,11 @@ from .utils import *
 
 from . import control
 
-from ._version import __version__
 from ._config.algo import algo_options, set_algo_options
 from ._config.plot import set_display_options
+
+# Handle dynamic versioning - fall back to unknown if _version.py is not available
+try:
+    from ._version import __version__
+except ImportError:
+    __version__ = "unknown"
