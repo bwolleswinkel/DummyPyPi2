@@ -16,7 +16,7 @@ import warnings
 import numpy as np
 import numpy.typing as npt
 
-from ._config import algo as cfg
+from . import _config as cfg
 
 
 def get_signed_angle(v_1: npt.NDArray[np.float64], v_2: npt.NDArray[np.float64], look: npt.NDArray[np.float64]) -> float:
@@ -56,6 +56,7 @@ def divide(a: float, b: float) -> float:
 
 
 def is_close(a: float, b: float) -> bool:
+    """Check if two floating-point numbers are close within global tolerances"""
     return np.isclose(a, b, rtol=cfg.RTOL, atol=cfg.ATOL)
 
 
