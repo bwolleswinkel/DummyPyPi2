@@ -45,6 +45,7 @@ from ._config.algo import algo_options, set_algo_options
 from ._config.plot import set_display_options
 
 # Handle dynamic versioning - fall back to unknown if _version.py is not available
+# FIXME: This does not work when using the workflow in GitHub Actions to build the package and upload to PyPI
 try:
     from ._version import __version__
 except ImportError:
