@@ -1,3 +1,5 @@
+"""This is the module for global configuration of DummyPyPi2. Do not import this module directly, unless you know what you are doing."""
+
 from . import algo
 
 # Export variables by reference to maintain global state

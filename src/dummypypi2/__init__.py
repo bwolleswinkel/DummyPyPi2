@@ -1,3 +1,5 @@
+"""This is the main package module for DummyPyPi2"""
+
 from .utils import *
 
 from . import control
