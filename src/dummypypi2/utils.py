@@ -21,7 +21,7 @@ from . import _config as cfg
 
 def get_signed_angle(v_1: npt.NDArray[np.float64], v_2: npt.NDArray[np.float64], look: npt.NDArray[np.float64]) -> float:
     """
-    FROM: https://github.com/lace/vg/blob/main/vg/core.py  #nopep8 
+    FROM: https://github.com/lace/vg/blob/main/vg/core.py  #nopep8
     """
 
     #: Compute the dot product (normalized)
