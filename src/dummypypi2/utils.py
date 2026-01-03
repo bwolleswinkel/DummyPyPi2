@@ -16,6 +16,9 @@ import warnings
 import numpy as np
 import numpy.typing as npt
 
+from . import config as cfg
+from .config import set_tol  # This is such that dp.set_tol can be used externally
+
 
 def get_signed_angle(v_1: npt.NDArray[np.float64], v_2: npt.NDArray[np.float64], look: npt.NDArray[np.float64]) -> float:
     """
@@ -56,13 +59,15 @@ def divide(a: float, b: float) -> float:
     return a / b
 
 
+def is_close(a: float, b: float) -> bool:
+    return np.isclose(a, b, rtol=cfg.RTOL, atol=cfg.ATOL)
+
+
 def main():
-    a = np.array([1, 0])
-    b = np.array([0, 1])
+    a = 0.9
+    b = 1.0
 
-    theta = get_signed_angle(a, b, look=np.cross(a, b))
-
-    print(np.degrees(theta))
+    print(is_close(a, b))
 
 
 if __name__ == "__main__":
