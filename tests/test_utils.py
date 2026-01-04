@@ -26,6 +26,13 @@ def test_get_signed_angle():
     look = np.array([0, 0, 1])
     assert np.degrees(dp.get_signed_angle(a, b, look=look)) == pytest.approx(90)
     assert np.degrees(dp.get_signed_angle(a, b, np.cross(a, b))) == pytest.approx(90)
+
+
+def test_get_signed_angle_argument_swap():
+    a, b = np.array([1, 0, 0]), np.array([0, 1, 2])
+    look = np.array([0, 0, 1])
+    assert np.degrees(dp.get_signed_angle(a, b, look=look)) == pytest.approx(90), "Angle from a to b should be 90 degrees counter-clockwise (which is positive in the look=[0, 0, 1] direction)"
+    assert np.degrees(dp.get_signed_angle(b, a, look=look)) == pytest.approx(-90), "Swapping the arguments should yield -90 degrees, as dg.get_signed_angle(a, b, ...) = -dg.get_signed_angle(b, a, ...)"
     
 
 def test_divide():
