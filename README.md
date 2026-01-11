@@ -9,3 +9,6 @@ Links:
 
 [![PyPI version](https://img.shields.io/pypi/v/mkdocs-badges)](https://pypi.org/project/DummyPyPi2/)
 ![Tests](https://github.com/bwolleswinkel/DummyPyPi2/actions/workflows/run-package-tests.yml/badge.svg)
+[![Nature Paper](https://img.shields.io/badge/DOI-10.1145%2F3746643-blue)](
+https://doi.org/10.1145/3746643)
+
