@@ -11,5 +11,7 @@ import dummypypi2 as dp
 ...
 ```
 
+This below should be a note.
+
 !!! note
     This project is to be deleted later; just to understand how package management works.
