@@ -1,4 +1,4 @@
-name: Run package tests
+name: tests
 
 on:
     push:
