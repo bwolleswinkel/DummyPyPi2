@@ -8,4 +8,4 @@ Links:
 [Github Pages](https://bwolleswinkel.github.io/DummyPyPi2/)
 
 [![PyPI version](https://img.shields.io/pypi/v/mkdocs-badges)](https://pypi.org/project/DummyPyPi2/)
-![Tests](https://github.com/bwolleswinkel/DummyPyPi2/actions/workflows/run-tests.yml/badge.svg)
+![Tests](https://github.com/bwolleswinkel/DummyPyPi2/actions/workflows/run-package-tests.yml/badge.svg)
