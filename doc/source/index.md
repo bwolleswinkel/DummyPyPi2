@@ -13,5 +13,8 @@ import dummypypi2 as dp
 
 This below should be a note.
 
-> [!NOTE]
-> Useful information that users should know, even when skimming content.
+!!! note
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
