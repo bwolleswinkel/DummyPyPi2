@@ -3,7 +3,6 @@ Dummy documentation
 
 This is some text
 
-====================
 Main selling points!
 ====================
 
