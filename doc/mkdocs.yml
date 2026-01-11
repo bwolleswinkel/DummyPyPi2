@@ -1,6 +1,6 @@
 # Minimal MkDocs configuration
 
-site_name: DummyPyPi2 Documentation
+site_name: NumPES Documentation
 docs_dir: source
 theme:
   name: material
