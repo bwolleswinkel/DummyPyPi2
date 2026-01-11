@@ -4,7 +4,7 @@ Dummy documentation
 This is some text
 
 Main selling points!
-====================
+--------------------
 
 The package is easy to use and makes extensive use of the operators :code:`+`, :code:`*`, :code:`in`, :code:`@`, etc.::
 
