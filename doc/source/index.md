@@ -11,7 +11,7 @@ import dummypypi2 as dp
 ...
 ```
 
-This below should be a note. This is something more.
+This below should be a note. This is something more. This is one more comment.
 
 !!! note
 
