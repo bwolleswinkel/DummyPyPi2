@@ -5,7 +5,7 @@ import os
 
 # -- Project information
 
-project = 'DummyPyPI (2)'
+project = 'DummyPyPI'
 copyright = '2026, Bart Wolleswinkel'
 author = 'Bart Wolleswinkel'
 
@@ -26,7 +26,7 @@ def get_git_version():
             version_pattern = r'^v?\d+\.\d+'
             
             for tag in tags:
-                if re.match(version_pattern, tag):
+                if re.match(version_pattern, tag) and 'dev' not in tag.lower():
                     # Clean up the version tag (remove 'v' prefix if present)
                     clean_version = re.sub(r'^v', '', tag)
                     return clean_version
