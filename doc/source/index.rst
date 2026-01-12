@@ -20,4 +20,4 @@ The package is easy to use and makes extensive use of the operators :code:`+`, :
 This is to see if these headings appear in the sidebar!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Here is some more text.
+Here is some more text. And another line.
