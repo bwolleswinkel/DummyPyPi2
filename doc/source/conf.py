@@ -9,33 +9,8 @@ project = 'DummyPyPI'
 copyright = '2026, Bart Wolleswinkel'
 author = 'Bart Wolleswinkel'
 
-def get_git_version():
-    """Get the latest git tag version from the repository."""
-    try:
-        # First, fetch tags from remote to ensure we have the latest
-        subprocess.run(['git', 'fetch', '--tags'], 
-                      capture_output=True, cwd=os.path.abspath('../..'))
-        
-        # Get all tags sorted by version (semantic versioning)
-        result = subprocess.run(['git', 'tag', '-l', '--sort=-version:refname'], 
-                              capture_output=True, text=True, 
-                              cwd=os.path.abspath('../..'))
-        if result.returncode == 0:
-            tags = [tag.strip() for tag in result.stdout.split('\n') if tag.strip()]
-            # Filter for version-like tags only
-            version_pattern = r'^v?\d+\.\d+'
-            
-            for tag in tags:
-                if re.match(version_pattern, tag):
-                    # Clean up the version tag (remove 'v' prefix if present)
-                    clean_version = re.sub(r'^v', '', tag)
-                    return clean_version
-    except Exception as e:
-        print(f"Warning: Could not get git version: {e}")
-    return '0.1.0'  # fallback
-
 # Get version from git tags
-release = get_git_version()
+release = '0.1.0'
 version = release
 
 # -- General configuration
